@@ -94,10 +94,10 @@ public class Main {
     
     public static void mainServerTest() { 
         String[] argsa = {"", "", ""};
-        argsa[0] = "jdbc:postgresql://192.168.1.100:54325/mikron1?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-        //argsa[0] = "jdbc:postgresql://server1.mikron-plzen.cz:54325/mikron1?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-        argsa[1] = "favak";
-        argsa[2] = "favak";
+        //dummy data
+        argsa[0] = "jdbc:postgresql://localhost:54325/db?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";;        
+        argsa[1] = "login";
+        argsa[2] = "password";
         
         PripojeniDB pripojeniTest = new PripojeniDB();
         int rc = pripojeniTest.navazSpojeniDB(argsa[0], argsa[1], argsa[2]);
@@ -115,14 +115,15 @@ public class Main {
         panel.dispose();
 
         String[] argsa = {"", "", ""};
+        //dummy data
         if(!isBackup) {
-            argsa[0] = "jdbc:postgresql://192.168.1.100:54325/mikron1?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+            argsa[0] = "jdbc:postgresql://localhost:54325/db?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
         } else {
-            argsa[0] = "jdbc:postgresql://192.168.1.100:54325/mikron1?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+            argsa[0] = "jdbc:postgresql://localhost:54325/db?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
         }
-        //argsa[0] = "jdbc:postgresql://192.168.1.100:54325/mikron1?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-        argsa[1] = "favak";
-        argsa[2] = "favak";
+       
+        argsa[1] = "login";
+        argsa[2] = "password";
         int rc = pripojeniDB.navazSpojeniDB(argsa[0], argsa[1], argsa[2]);
         ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         gd = ge.getDefaultScreenDevice();
